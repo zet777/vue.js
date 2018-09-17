@@ -22,12 +22,19 @@
 					</button>
 					<hr>
 					<h2 v-show="showH2">Hello,world! </h2> 
+					<hr>
+					<ul class="list-group">
+						<li class="list-group-item" v-for="number in numbers">
+							{{ number }}
+						</li>
+					</ul>
 				</div>
 				<script>
 					let sample = new Vue({ 
 						el:'.sample', 
 						data: { 
-							showH2:false
+							showH2: true,
+							numbers: [1,2,3,4,5,]
 						}
 					});
 				</script>
