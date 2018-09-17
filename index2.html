@@ -15,7 +15,9 @@
 		<section>
 			<div class="wrapper">
 				<div class="sample">
-					<button class="btn btn-primary" v-on:click="showH2 = !showH2">
+					<button class="btn btn-primary" 
+							v-on:click="showH2 = !showH2"
+							v-bind:titel="showH2 ? 'Hide' : 'Show'">
 						Toggle header
 					</button>
 					<hr>
