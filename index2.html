@@ -23,6 +23,12 @@
 					<hr>
 					<h2 v-show="showH2">Hello,world! </h2> 
 					<hr>
+					<button class="btn btn-success" 
+							v-on:click="numbers.push(Math.random())"
+							>
+						Add number
+					</button>
+					<hr>
 					<ul class="list-group">
 						<li class="list-group-item" v-for="number in numbers">
 							{{ number }}
@@ -34,7 +40,7 @@
 						el:'.sample', 
 						data: { 
 							showH2: true,
-							numbers: [1,2,3,4,5,]
+							numbers: []
 						}
 					});
 				</script>
