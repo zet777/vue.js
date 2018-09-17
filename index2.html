@@ -19,13 +19,13 @@
 						Toggle header
 					</button>
 					<hr>
-					<h2 v-show="true">Hello,world! </h2> 
+					<h2 v-show="showH2">Hello,world! </h2> 
 				</div>
 				<script>
 					let sample = new Vue({ 
 						el:'.sample', 
 						data: { 
-							
+							showH2:false
 						}
 					});
 				</script>
