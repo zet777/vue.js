@@ -21,7 +21,7 @@
 						Toggle header
 					</button>
 					<hr>
-					<h2 v-show="showH2">You profin: {{ sum() }}! </h2> 
+					<h2 v-show="showH2">You profin: {{ sum }}! </h2>
 					<hr>
 					<button class="btn btn-success" 
 							v-on:click="addNumber"
@@ -46,7 +46,9 @@
 							addNumber(){
 								let rnd = Math.floor(Math.random() * 11) - 5;
 								this.numbers.push(rnd) //this для того что бы задействовать numbers из date
-							},
+							}
+						},
+						computed:{ // перенесли sum в compudet что бы пересчет шел только по клику add numbers
 							sum(){
 								let sum = 0;
 								for (let i = 0; i < this.numbers.length; i++){
