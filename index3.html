@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Урок 2 дерективы</title>
+	<title>Урок 3 - методы и вычисляемые свойства</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/vue.js"></script>
@@ -24,7 +24,7 @@
 					<h2 v-show="showH2">Hello,world! </h2> 
 					<hr>
 					<button class="btn btn-success" 
-							v-on:click="numbers.push(Math.random())"
+							v-on:click="addNumber"
 							>
 						Add number
 					</button>
@@ -43,7 +43,9 @@
 							numbers: []
 						},
 						methods:{
-							
+							addNumber(){
+								this.numbers.push(Math.random()) //this для того что бы задействовать numbers из date
+							}
 						}
 					});
 				</script>
