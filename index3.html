@@ -17,11 +17,11 @@
 				<div class="sample">
 					<button class="btn btn-primary" 
 							v-on:click="showH2 = !showH2"
-							v-bind:titel="showH2 ? 'Hide' : 'Show'">
-						Toggle header
+							>
+						{{ btnTexts }}
 					</button>
 					<hr>
-					<h2 v-show="showH2">You profin: {{ sum }}! </h2>
+					<h2 v-show="showH2">You profit: {{ sum }}! </h2>
 					<hr>
 					<button class="btn btn-success" 
 							v-on:click="addNumber"
@@ -55,6 +55,9 @@
 									sum += this.numbers[i];	
 								}
 								return sum;
+							},
+							btnTexts(){
+								return this.showH2 ? 'Hide resualt' : 'Show resualt';
 							}
 						}
 					});
