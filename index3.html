@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Урок 2 дерективы</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/vue.js"></script>
+
+</head>
+<body>
+	<header>
+		<section>
+			<div class="wrapper">
+				<div class="sample">
+					<button class="btn btn-primary" 
+							v-on:click="showH2 = !showH2"
+							v-bind:titel="showH2 ? 'Hide' : 'Show'">
+						Toggle header
+					</button>
+					<hr>
+					<h2 v-show="showH2">Hello,world! </h2> 
+					<hr>
+					<button class="btn btn-success" 
+							v-on:click="numbers.push(Math.random())"
+							>
+						Add number
+					</button>
+					<hr>
+					<ul class="list-group">
+						<li class="list-group-item" v-for="number in numbers">
+							{{ number }}
+						</li>
+					</ul>
+				</div>
+				<script>
+					let sample = new Vue({ 
+						el:'.sample', 
+						data: { 
+							showH2: true,
+							numbers: []
+						},
+						methods:{
+							
+						}
+					});
+				</script>
+			</div>
+		</section>
+	</header>	
+</body>
+</html>
