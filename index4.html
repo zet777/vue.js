@@ -27,7 +27,8 @@
 						<h2 v-show="showH2" class="alert alert-success">You profit: {{ sum }}! </h2>
 					</transition>	
 					<hr>
-				<app-progress val="2" max="10"></app-progress>
+				<app-progress v-bind:val="numbers.length" 
+											v-bind:max="maxNumbers"></app-progress>
 					<hr>
 					<button class="btn btn-success" 
 							v-on:click="addNumber"
@@ -45,13 +46,14 @@
 				<script>
 					Vue.component('app-progress',{ // Новый глобальный компонент с название 'app-progress' с содержанием bootstrap progress-bar
 						props:{
-							max: Number,
-							val: Number
+							max: Number, // максималькое количество шагов	
+							val: Number // колличество шагов
 						},
 						computed: {
 							width(){
+								let w = (this.val / this.max) * 100; // получаем ширену програсс бала в %
 								return {
-									width: '27%'
+									width: w + '%'
 								}
 							}
 						},
@@ -66,7 +68,8 @@
 						el:'.sample', 
 						data: { 
 							showH2: true,
-							numbers: []
+							numbers: [],
+							maxNumbers: 10
 						},
 						methods:{
 							addNumber(){
