@@ -26,9 +26,10 @@
 					 <transition name="slide"> 
 						<h2 v-show="showH2" class="alert alert-success">You profit: {{ sum }}! </h2>
 					</transition>	
+					
 					<hr>
-				<app-progress v-bind:val="numbers.length" 
-											v-bind:max="maxNumbers"></app-progress>
+					<app-progress v-bind:val="numbers.length" 
+												v-bind:max="maxNumbers"></app-progress>
 					<hr>
 					<button class="btn btn-success" 
 							v-on:click="addNumber"
