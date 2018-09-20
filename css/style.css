@@ -7,10 +7,12 @@
 }
 
 .slide-enter-active{
+  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; 
 }
 
 .slide-leave-active{
+  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; 
 }
 
