@@ -25,9 +25,7 @@
 					<!--transition это компонент name это атрибут slide контролирует классы и заголовок появляется исчезает плавно -->
 					 <transition name="slide"> 
 						<h2 v-show="showH2" class="alert alert-success">You profit: {{ sum }}! </h2>
-					</transition>
-				
-				
+					</transition>	
 					<hr>
 					<button class="btn btn-success" 
 							v-on:click="addNumber"
@@ -41,7 +39,16 @@
 						</li>
 					</ul>
 				</div>
+				
 				<script>
+					Vue.component('app-progress',{ // Новый глобальный компонент с название 'app-progress' с содержанием bootstrap progress-bar
+						template: `
+							<div class="progress">
+								<div class="progress-bar" style="width: 50%"></div>
+							</div>
+						`
+					});
+
 					let sample = new Vue({ 
 						el:'.sample', 
 						data: { 
