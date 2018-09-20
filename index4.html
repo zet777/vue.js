@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/vue.js"></script>
-
+	
 </head>
+
 <body>
 	<header>
 		<section>
@@ -20,10 +21,12 @@
 							>
 						{{ btnTexts }}
 					</button>
-					<transition>
-						<h2 v-show="showH2">You profit: {{ sum }}! </h2>
-					</transition>
 					<hr>
+					<!--transition это компонент name это атрибут slide контролирует классы и заголовок появляется исчезает плавно -->
+					 <transition name="slide"> 
+						<h2 v-show="showH2" class="alert alert-success">You profit: {{ sum }}! </h2>
+					</transition>
+				
 				
 					<hr>
 					<button class="btn btn-success" 
